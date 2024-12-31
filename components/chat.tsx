@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from 'react'
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -70,11 +69,7 @@ export default function OmegleChat({ strangerVideo, setIsCon }: { myVideo: null 
       <CardFooter className="p-4 border-t">
         <div className="flex flex-col mr-5 space-y-2">
           <div className="flex gap-3">
-            {showFirst ?
-              <Button className="h-40 w-40" onClick={() => { setShowFirst(false); handleStart(strangerVideo, setIsCon) }} variant="default">Start</Button>
-              :
-              <Button className="h-40 w-40" onClick={() => { setShowFirst(false); handleRestart(strangerVideo, setIsCon) }} variant="default">Next</Button>
-            }
+            <Button className="h-40 w-40" onClick={() => { setShowFirst(false); handleStart(strangerVideo, setIsCon) }} variant="default">Start</Button>
             <Button className="h-40 w-40" onClick={() => { handleStop(strangerVideo, setIsCon) }} variant="secondary">Stop</Button>
           </div>
         </div>
