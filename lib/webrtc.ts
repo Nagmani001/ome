@@ -1,5 +1,4 @@
-
-import { io } from "socket.io-client";
+import { sockett } from "../app/socket.js"
 
 let socket: any;
 let stream: null | MediaStream;
@@ -10,7 +9,7 @@ let roomId: any;
 
 
 export const onMount = async (myVideo: any) => {
-  const connSocket = io("http://localhost:3000");
+  const connSocket = sockett;
   const connStream = await navigator.mediaDevices.getUserMedia({
     audio: true, video: {
       width: { ideal: 770 },

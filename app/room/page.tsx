@@ -3,6 +3,7 @@ import OmegleChat from "@/components/chat";
 import Spinner from "@/components/spinner";
 import { onMount } from "@/lib/webrtc";
 import { useEffect, useRef, useState } from "react";
+import { sockett } from "../socket.js";
 
 export default function Room() {
   const myVideo = useRef<HTMLVideoElement | null>(null);
@@ -10,7 +11,9 @@ export default function Room() {
   const [isConnected, setIsConnected] = useState(false);
 
   useEffect(() => {
-    onMount(myVideo);
+    if (sockett.connected) {
+      onMount(myVideo);
+    }
 
   }, []);
 
