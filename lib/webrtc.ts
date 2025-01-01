@@ -27,11 +27,11 @@ export const onMount = async (myVideo: any) => {
 
 export function handleStart(strangerVideo: any, setIsCon: any) {
   setIsCon(false);
-  socket.off('roomId');
-  socket.off('remote-socket');
-  socket.off('sdp:reply');
-  socket.off('ice:reply');
-  socket.off('disconnected');
+  socket?.off('roomId');
+  socket?.off('remote-socket');
+  socket?.off('sdp:reply');
+  socket?.off('ice:reply');
+  socket?.off('disconnected');
 
   if (!socket) {
     console.log("socket did not exist")
